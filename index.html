@@ -906,4 +906,81 @@ button {
     <source src="musik.mp3" type="audio/mpeg">
 </audio>
 <!-- popup -->
-<div id="fotoPopup" onclick="tutu
+<div id="fotoPopup" onclick="tutupFoto()">
+    <img id="foto" src="foto.jpg">
+</div>
+
+<script>
+let index = 0;
+let soal = document.querySelectorAll(".soal");
+let benarCount = 0;
+let salahCount = 0;
+
+function showSoal(i){
+    soal.forEach(s => s.classList.remove("aktif"));
+    soal[i].classList.add("aktif");
+}
+
+function nextSoal(){
+    index++;
+
+    if(index >= soal.length){
+        tampilHasil();
+        return;
+    }
+
+    showSoal(index);
+}
+
+function jawab(el, benar){
+    let parent = el.parentElement;
+
+    if(parent.classList.contains("done")) return;
+    parent.classList.add("done");
+
+    if(benar){
+        el.classList.add("benar");
+        benarCount++;
+
+        let foto = document.getElementById("foto");
+        foto.classList.add("jedag");
+        document.getElementById("fotoPopup").style.display = "flex";
+    } else {
+        el.classList.add("salah");
+        salahCount++;
+    }
+
+    // AUTO NEXT
+    setTimeout(() => {
+        nextSoal();
+    }, 800);
+}
+
+function tampilHasil(){
+    document.querySelector("button").style.display = "none";
+
+    let hasil = document.getElementById("hasil");
+    hasil.style.display = "block";
+
+    hasil.innerHTML = `
+        🎉 SELESAI 🎉<br><br>
+        ✅ Benar: ${benarCount} <br>
+        ❌ Salah: ${salahCount} <br>
+        📊 Nilai: ${(benarCount/soal.length)*100}
+    `;
+}
+
+function tutupFoto(){
+    let foto = document.getElementById("foto");
+    foto.classList.remove("jedag");
+    document.getElementById("fotoPopup").style.display = "none";
+}
+
+// autoplay fix
+window.addEventListener("click", () => {
+    document.getElementById("bgm").play();
+});
+</script>
+
+</body>
+</html>
