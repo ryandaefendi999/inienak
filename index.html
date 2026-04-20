@@ -2,35 +2,49 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<title>PPKn 5–14 Interaktif</title>
+<title>PPKn Interaktif</title>
 
 <style>
 body {
     font-family: Arial;
-    background: #111;
     color: white;
-    padding: 20px;
-    
+    text-align: center;
+    background: url("foto1.jpg") no-repeat center center fixed;
+    background-size: cover;
 }
 
 .soal {
-    background: #222;
-    padding: 15px;
-    margin-bottom: 15px;
+    display: none;
+    background: rgba(0,0,0,0.7);
+    padding: 20px;
+    margin: 20px;
     border-radius: 10px;
+}
+
+.aktif {
+    display: block;
 }
 
 .opsi {
     display: block;
-    padding: 6px;
-    margin: 4px 0;
-    background: #333;
+    padding: 10px;
+    margin: 5px;
+    background: rgba(50,50,50,0.8);
     border-radius: 6px;
     cursor: pointer;
 }
 
-.opsi:hover {
-    background: #555;
+.benar {
+    background: green !important;
+}
+
+.salah {
+    background: red !important;
+}
+
+button {
+    padding: 10px;
+    margin-top: 15px;
 }
 
 /* popup */
@@ -53,13 +67,432 @@ body {
 /* jedag */
 @keyframes jedag {
     0%{transform:scale(1)}
-    50%{transform:scale(1.2)}
+    50%{transform:scale(1.3)}
     100%{transform:scale(1)}
 }
 
 .jedag {
     animation: jedag 0.3s infinite;
 }
+
+/* hasil */
+#hasil {
+    display: none;
+    font-size: 20px;
+}
+</style>
+</head>
+
+<body>
+
+<h1>🔥 Soal PPKn 🔥</h1>
+
+<audio id="bgm" loop autoplay>
+    <source src="musik.mp3" type="audio/mpeg">
+</audio>
+
+<!-- SOAL 5 -->
+<div class="soal aktif">
+<p>5. Pancasila sebagai dasar negara Indonesia terdapat dalam…</p>
+<span class="opsi" onclick="jawab(this,false)">a. UUD 1945</span>
+<span class="opsi" onclick="jawab(this,false)">b. Obi sama Aidil ciuman</span>
+<span class="opsi" onclick="jawab(this,true)">c. Pembukaan UUD 1945</span>
+<span class="opsi" onclick="jawab(this,false)">d. Sumpah Pemuda</span>
+</div>
+
+<!-- SOAL 6 -->
+<div class="soal">
+<p>6. Presiden ke dua pada masa orde lama…</p>
+<span class="opsi" onclick="jawab(this,true)">C. Syafrudin</span>
+<span class="opsi" onclick="jawab(this,false)">A. Soekarno</span>
+<span class="opsi" onclick="jawab(this,false)">B. Mr Assaat</span>
+<span class="opsi" onclick="jawab(this,false)">D. Adam Malik</span>
+</div>
+    
+<!-- SOAL 7 -->
+<div class="soal">
+<p>7. Sistem pemerintahan presidensial Indonesia dapat dijelaskan dengan...</p>
+<span class="opsi" onclick="jawab(this,true)">a. Presiden dipilih oleh rakyat dan bertanggung jawab kepada rakyat</span>
+<span class="opsi" onclick="jawab(this,false)">b. Presiden dipilih oleh DPR dan bertanggung jawab kepada DPR</span>
+<span class="opsi" onclick="jawab(this,false)">c. Pemerintah pusat dan daerah memiliki kewenangan yang sama</span>
+<span class="opsi" onclick="jawab(this,false)">d. Presiden bekerja sama dengan parlemen untuk membuat kebijakan</span>
+</div>
+
+<!-- SOAL 8 -->
+<div class="soal">
+<p>8. Presiden Indonesia yang pertama adalah:</p>
+<span class="opsi" onclick="jawab(this,true)">a. Soekarno</span>
+<span class="opsi" onclick="jawab(this,false)">b. Soeharto</span>
+<span class="opsi" onclick="jawab(this,false)">c. B.J. Habibie</span>
+<span class="opsi" onclick="jawab(this,false)">d. Joko Widodo</span>
+</div>
+
+<!-- SOAL 9 -->
+<div class="soal">
+<p>9. Pemilihan umum (pemilu) di Indonesia dilaksanakan setiap:</p>
+<span class="opsi" onclick="jawab(this,false)">a. 3 tahun sekali</span>
+<span class="opsi" onclick="jawab(this,true)">b. 5 tahun sekali</span>
+<span class="opsi" onclick="jawab(this,false)">c. 7 tahun sekali</span>
+<span class="opsi" onclick="jawab(this,false)">d. 10 tahun sekali</span>
+</div>
+
+<!-- SOAL 10 -->
+<div class="soal">
+<p>10. Konsep negara kesatuan yang diterapkan di Indonesia memiliki tujuan untuk...</p>
+<span class="opsi" onclick="jawab(this,false)">a. Memperbesar daerah-daerah tertentu</span>
+<span class="opsi" onclick="jawab(this,true)">b. Memperkuat persatuan dan kesatuan bangsa</span>
+<span class="opsi" onclick="jawab(this,false)">c. Memisahkan kepentingan daerah dan pusat</span>
+<span class="opsi" onclick="jawab(this,false)">d. Menetapkan daerah otonomi khusus</span>
+</div>
+
+<!-- SOAL 11 -->
+<div class="soal">
+<p>11. Sila pertama Pancasila berbunyi:</p>
+<span class="opsi" onclick="jawab(this,false)">a. Kemanusiaan yang Adil dan Beradab</span>
+<span class="opsi" onclick="jawab(this,true)">b. Ketuhanan Yang Maha Esa</span>
+<span class="opsi" onclick="jawab(this,false)">c. Persatuan Indonesia</span>
+<span class="opsi" onclick="jawab(this,false)">d. Keadilan Sosial bagi Seluruh Rakyat Indonesia</span>
+</div>
+
+<!-- SOAL 12 -->
+<div class="soal">
+<p>12. Lambang negara Indonesia adalah:</p>
+<span class="opsi" onclick="jawab(this,false)">a. Harimau</span>
+<span class="opsi" onclick="jawab(this,false)">b. Burung Garuda</span>
+<span class="opsi" onclick="jawab(this,false)">c. Elang Jawa</span>
+<span class="opsi" onclick="jawab(this,false)">d. Komodo</span>
+<span class="opsi" onclick="jawab(this,true)">e. Garuda Pancasila</span>
+</div>
+
+<!-- SOAL 13 -->
+<div class="soal">
+<p>13. Berapa lama masa jabatan presiden sementara tersebut pada masa orde lama…</p>
+<span class="opsi" onclick="jawab(this,false)">a. 19 Desember 1948 – 13 Juli 1949</span>
+<span class="opsi" onclick="jawab(this,true)">b. 27 Desember 1949 – 15 Agustus 1950</span>
+<span class="opsi" onclick="jawab(this,false)">c. 19 September 1946 – 27 Juli 1947</span>
+<span class="opsi" onclick="jawab(this,false)">d. 18 September 1949 – 13 Juni 1950</span>
+</div>
+
+<!-- SOAL 14 -->
+<div class="soal">
+<p>14. Wajib belajar di Indonesia diatur dalam UUD 1945 pasal:</p>
+<span class="opsi" onclick="jawab(this,false)">a. 29</span>
+<span class="opsi" onclick="jawab(this,false)">b. 31</span>
+<span class="opsi" onclick="jawab(this,true)">c. 34</span>
+<span class="opsi" onclick="jawab(this,false)">d. 36</span>
+</div>
+
+<!-- SOAL 15 -->
+<div class="soal">
+<p>15. Pemerintah daerah di Indonesia diberikan kewenangan untuk...</p>
+<span class="opsi" onclick="jawab(this,false)">a. Membuat kebijakan nasional</span>
+<span class="opsi" onclick="jawab(this,false)">b. Menentukan kebijakan luar negeri</span>
+<span class="opsi" onclick="jawab(this,true)">c. Mengelola sumber daya alam setempat</span>
+<span class="opsi" onclick="jawab(this,false)">d. Membentuk lembaga eksekutif pusat</span>
+</div>
+
+<!-- SOAL 16 -->
+<div class="soal">
+<p>16. Hak asasi manusia yang dijamin dalam UUD 1945 mencakup hak...</p>
+<span class="opsi" onclick="jawab(this,false)">a. Pendidikan</span>
+<span class="opsi" onclick="jawab(this,false)">b. Bekerja</span>
+<span class="opsi" onclick="jawab(this,false)">c. Kebebasan berpendapat</span>
+<span class="opsi" onclick="jawab(this,true)">d. Semua jawaban benar</span>
+</div>
+    
+<!-- SOAL 17 -->
+<div class="soal">
+<p>17. Tugas utama DPR adalah:</p>
+<span class="opsi" onclick="jawab(this,true)">a. Membuat undang-undang</span>
+<span class="opsi" onclick="jawab(this,false)">b. Menjalankan pemerintahan</span>
+<span class="opsi" onclick="jawab(this,false)">c. Mengadili perkara hukum</span>
+<span class="opsi" onclick="jawab(this,false)">d. Melantik presiden</span>
+</div>
+
+<!-- SOAL 18 -->
+<div class="soal">
+<p>18. Apa kepanjangan dari Supersemar?</p>
+<span class="opsi" onclick="jawab(this,false)">a. Surat Perintah Lima Maret</span>
+<span class="opsi" onclick="jawab(this,true)">b. Surat Perintah Sebelas Maret</span>
+<span class="opsi" onclick="jawab(this,false)">c. Surat Perintah Tujuh Maret</span>
+<span class="opsi" onclick="jawab(this,false)">d. Surat Perintah Sepuluh Maret</span>
+</div>
+
+<!-- SOAL 19 -->
+<div class="soal">
+<p>19. Badan legislatif Indonesia terdiri dari ...</p>
+<span class="opsi" onclick="jawab(this,true)">a. MPR, DPR, DPD</span>
+<span class="opsi" onclick="jawab(this,false)">b. DPR, MK, DPD</span>
+<span class="opsi" onclick="jawab(this,false)">c. Presiden, DPR, MPR</span>
+<span class="opsi" onclick="jawab(this,false)">d. MK, MPR, BPK</span>
+</div>
+
+<!-- SOAL 20 -->
+<div class="soal">
+<p>20. Siapa yang menjadi presiden ke tiga pada masa 1949 - 1950…</p>
+<span class="opsi" onclick="jawab(this,false)">A. Soekarno</span>
+<span class="opsi" onclick="jawab(this,false)">B. Soeharto</span>
+<span class="opsi" onclick="jawab(this,false)">C. Syafrudin</span>
+<span class="opsi" onclick="jawab(this,true)">D. Mr Assaat</span>
+</div>
+
+<!-- SOAL 21 -->
+<div class="soal">
+<p>21. Partisipasi politik yang dapat dilakukan oleh warga negara dalam pemilu adalah...</p>
+<span class="opsi" onclick="jawab(this,false)">a. Memilih calon yang terbaik</span>
+<span class="opsi" onclick="jawab(this,false)">b. Menyusun peraturan pemilu</span>
+<span class="opsi" onclick="jawab(this,false)">c. Mengawasi jalannya pemilu</span>
+<span class="opsi" onclick="jawab(this,true)">d. Semua jawaban benar</span>
+</div>
+
+<!-- SOAL 22 -->
+<div class="soal">
+<p>22. Lagu kebangsaan Indonesia adalah:</p>
+<span class="opsi" onclick="jawab(this,false)">a. Halo-Halo Bandung</span>
+<span class="opsi" onclick="jawab(this,false)">b. Indonesia Jaya</span>
+<span class="opsi" onclick="jawab(this,true)">c. Indonesia Raya</span>
+<span class="opsi" onclick="jawab(this,false)">d. Garuda di Dadaku</span>
+</div>
+
+<!-- SOAL 23 -->
+<div class="soal">
+<p>23. Tugas utama Mahkamah Konstitusi adalah:</p>
+<span class="opsi" onclick="jawab(this,false)">a. Menangani kasus korupsi</span>
+<span class="opsi" onclick="jawab(this,true)">b. Menjaga konstitusi dan undang-undang</span>
+<span class="opsi" onclick="jawab(this,false)">c. Mengatur keuangan negara</span>
+<span class="opsi" onclick="jawab(this,false)">d. Menyusun program pembangunan</span>
+</div>
+
+<!-- SOAL 24 -->
+<div class="soal">
+<p>24. Tujuan gotong royong dalam masyarakat adalah...</p>
+<span class="opsi" onclick="jawab(this,true)">a. Mempererat hubungan sosial</span>
+<span class="opsi" onclick="jawab(this,false)">b. Menambah beban orang lain</span>
+<span class="opsi" onclick="jawab(this,false)">c. Menunjukkan siapa yang paling kuat</span>
+<span class="opsi" onclick="jawab(this,false)">d. Membuat orang lain bekerja lebih keras</span>
+</div>
+
+<!-- SOAL 25 -->
+<div class="soal">
+<p>25. Sila kedua Pancasila berbunyi…</p>
+<span class="opsi" onclick="jawab(this,false)">a. Keadilan sosial bagi seluruh rakyat Indonesia</span>
+<span class="opsi" onclick="jawab(this,false)">b. Ketuhanan yang Maha Esa</span>
+<span class="opsi" onclick="jawab(this,false)">c. Persatuan Indonesia</span>
+<span class="opsi" onclick="jawab(this,true)">d. Kemanusiaan yang adil dan beradab</span>
+</div>
+
+<!-- SOAL 26 -->
+<div class="soal">
+<p>26. Dalam sistem pemerintahan Indonesia, siapa yang memiliki kewenangan untuk mengangkat hakim agung…</p>
+<span class="opsi" onclick="jawab(this,true)">a. Presiden</span>
+<span class="opsi" onclick="jawab(this,false)">b. MPR</span>
+<span class="opsi" onclick="jawab(this,false)">c. DPR</span>
+<span class="opsi" onclick="jawab(this,false)">d. Mahkamah Agung</span>
+</div>
+    
+<!-- SOAL 27 -->
+<div class="soal">
+<p>27. Hak yang dimiliki setiap warga negara disebut:</p>
+<span class="opsi" onclick="jawab(this,false)">a. Kewajiban</span>
+<span class="opsi" onclick="jawab(this,false)">b. Tanggung jawab</span>
+<span class="opsi" onclick="jawab(this,true)">c. Hak asasi manusia</span>
+<span class="opsi" onclick="jawab(this,false)">d. Peraturan</span>
+</div>
+
+<!-- SOAL 28 -->
+<div class="soal">
+<p>28. Hak untuk hidup, berpendapat, dan mendapatkan pendidikan disebut:</p>
+<span class="opsi" onclick="jawab(this,true)">a. Hak asasi manusia</span>
+<span class="opsi" onclick="jawab(this,false)">b. Hak khusus</span>
+<span class="opsi" onclick="jawab(this,false)">c. Hak warga negara</span>
+<span class="opsi" onclick="jawab(this,false)">d. Hak istimewa</span>
+</div>
+
+<!-- SOAL 29 -->
+<div class="soal">
+<p>29. Bagaimana cara Indonesia menjaga keberagaman yang ada di masyarakat…</p>
+<span class="opsi" onclick="jawab(this,false)">a. Mengutamakan satu agama tertentu</span>
+<span class="opsi" onclick="jawab(this,true)">b. Menghormati perbedaan dan hidup berdampingan secara damai</span>
+<span class="opsi" onclick="jawab(this,false)">c. Memisahkan budaya dan suku tertentu</span>
+<span class="opsi" onclick="jawab(this,false)">d. Menegakkan hukum yang tegas</span>
+</div>
+
+<!-- SOAL 30 -->
+<div class="soal">
+<p>30. Apa tujuan utama dari peradilan sosial…</p>
+<span class="opsi" onclick="jawab(this,false)">a. Mengurangi jumlah kasus kriminal</span>
+<span class="opsi" onclick="jawab(this,true)">b. Menegakkan hak-hak sosial dan ekonomi warga negara</span>
+<span class="opsi" onclick="jawab(this,false)">c. Menjaga keamanan negara</span>
+<span class="opsi" onclick="jawab(this,false)">d. Menyelesaikan masalah politik</span>
+</div>
+
+<!-- SOAL 31 -->
+<div class="soal">
+<p>31. Musyawarah merupakan salah satu cara untuk mendapatkan…</p>
+<span class="opsi" onclick="jawab(this,false)">a. Keputusan suara terbanyak</span>
+<span class="opsi" onclick="jawab(this,false)">b. Kesepakatan dengan paksaan</span>
+<span class="opsi" onclick="jawab(this,true)">c. Keputusan melalui diskusi bersama</span>
+<span class="opsi" onclick="jawab(this,false)">d. Keputusan pemerintah saja</span>
+</div>
+
+<!-- SOAL 32 -->
+<div class="soal">
+<p>32. Salah satu contoh penerapan HAM adalah…, kecuali</p>
+<span class="opsi" onclick="jawab(this,false)">a. Menghormati hak orang lain</span>
+<span class="opsi" onclick="jawab(this,false)">b. Kebebasan berbicara</span>
+<span class="opsi" onclick="jawab(this,false)">c. Mendapat pekerjaan layak</span>
+<span class="opsi" onclick="jawab(this,true)">d. Mendapat reward dari pekerjaan</span>
+</div>
+
+<!-- SOAL 33 -->
+<div class="soal">
+<p>33. Fungsi Pancasila sebagai dasar negara adalah…, kecuali</p>
+<span class="opsi" onclick="jawab(this,true)">a. Mengatur hubungan internasional</span>
+<span class="opsi" onclick="jawab(this,false)">b. Menyusun sistem hukum</span>
+<span class="opsi" onclick="jawab(this,false)">c. Dasar organisasi negara</span>
+<span class="opsi" onclick="jawab(this,false)">d. Mewujudkan keadilan sosial</span>
+</div>
+
+<!-- SOAL 34 -->
+<div class="soal">
+<p>34. Salah satu kewajiban warga negara adalah:</p>
+<span class="opsi" onclick="jawab(this,false)">a. Menghindari pemilu</span>
+<span class="opsi" onclick="jawab(this,true)">b. Membayar pajak</span>
+<span class="opsi" onclick="jawab(this,false)">c. Menolak aturan</span>
+<span class="opsi" onclick="jawab(this,false)">d. Mengabaikan hukum</span>
+</div>
+
+<!-- SOAL 35 -->
+<div class="soal">
+<p>35. Negara Indonesia menganut sistem pemerintahan:</p>
+<span class="opsi" onclick="jawab(this,false)">a. Monarki</span>
+<span class="opsi" onclick="jawab(this,true)">b. Republik</span>
+<span class="opsi" onclick="jawab(this,false)">c. Kerajaan</span>
+<span class="opsi" onclick="jawab(this,false)">d. Otoriter</span>
+<span class="opsi" onclick="jawab(this,false)">e. Presidensial</span>
+</div>
+
+<!-- SOAL 36 -->
+<div class="soal">
+<p>36. Contoh nilai Bhinneka Tunggal Ika adalah…, kecuali</p>
+<span class="opsi" onclick="jawab(this,false)">a. Menghormati perbedaan</span>
+<span class="opsi" onclick="jawab(this,false)">b. Menjaga persatuan</span>
+<span class="opsi" onclick="jawab(this,false)">c. Kebebasan berpendapat</span>
+<span class="opsi" onclick="jawab(this,true)">d. Membedakan teman</span>
+</div>
+    
+<!-- SOAL 37 -->
+<div class="soal">
+<p>37. Apakah yang dimaksud dengan demokrasi Pancasila…</p>
+<span class="opsi" onclick="jawab(this,false)">a. Sistem pemerintahan berdasarkan agama</span>
+<span class="opsi" onclick="jawab(this,true)">b. Sistem pemerintahan yang berlandaskan pada prinsip musyawarah</span>
+<span class="opsi" onclick="jawab(this,false)">c. Sistem pemerintahan kapitalis</span>
+<span class="opsi" onclick="jawab(this,false)">d. Sistem tanpa rakyat</span>
+</div>
+
+<!-- SOAL 38 -->
+<div class="soal">
+<p>38. Lembaga negara yang berfungsi sebagai pengawas kebijakan pemerintah adalah...</p>
+<span class="opsi" onclick="jawab(this,true)">a. Dewan Perwakilan Rakyat</span>
+<span class="opsi" onclick="jawab(this,false)">b. Mahkamah Agung</span>
+<span class="opsi" onclick="jawab(this,false)">c. Badan Pemeriksa Keuangan</span>
+<span class="opsi" onclick="jawab(this,false)">d. Dewan Perwakilan Daerah</span>
+</div>
+
+<!-- SOAL 39 -->
+<div class="soal">
+<p>39. Setelah BPUPKI dibubarkan, badan penggantinya adalah...</p>
+<span class="opsi" onclick="jawab(this,false)">a. KNIP</span>
+<span class="opsi" onclick="jawab(this,true)">b. PPKI</span>
+<span class="opsi" onclick="jawab(this,false)">c. BKR</span>
+<span class="opsi" onclick="jawab(this,false)">d. TKR</span>
+</div>
+
+<!-- SOAL 40 -->
+<div class="soal">
+<p>40. Lembaga yang berwenang mengubah UUD 1945 adalah...</p>
+<span class="opsi" onclick="jawab(this,false)">a. DPR</span>
+<span class="opsi" onclick="jawab(this,false)">b. Presiden</span>
+<span class="opsi" onclick="jawab(this,true)">c. MPR</span>
+<span class="opsi" onclick="jawab(this,false)">d. Mahkamah Agung</span>
+</div>
+
+<!-- SOAL 41 -->
+<div class="soal">
+<p>41. Warna merah pada bendera Indonesia melambangkan:</p>
+<span class="opsi" onclick="jawab(this,false)">a. Kesucian</span>
+<span class="opsi" onclick="jawab(this,true)">b. Keberanian</span>
+<span class="opsi" onclick="jawab(this,false)">c. Kemerdekaan</span>
+<span class="opsi" onclick="jawab(this,false)">d. Kesetiaan</span>
+</div>
+
+<!-- SOAL 42 -->
+<div class="soal">
+<p>42. Pasal yang mengatur kebebasan berpendapat adalah…</p>
+<span class="opsi" onclick="jawab(this,false)">a. Pasal 27</span>
+<span class="opsi" onclick="jawab(this,true)">b. Pasal 28E</span>
+<span class="opsi" onclick="jawab(this,false)">c. Pasal 30</span>
+<span class="opsi" onclick="jawab(this,false)">d. Pasal 31</span>
+</div>
+
+<!-- SOAL 43 -->
+<div class="soal">
+<p>43. Wilayah laut Indonesia disebut negara:</p>
+<span class="opsi" onclick="jawab(this,false)">a. Agraris</span>
+<span class="opsi" onclick="jawab(this,true)">b. Maritim</span>
+<span class="opsi" onclick="jawab(this,false)">c. Industri</span>
+<span class="opsi" onclick="jawab(this,false)">d. Gunung</span>
+</div>
+
+<!-- SOAL 44 -->
+<div class="soal">
+<p>44. Hak dan kewajiban warga negara harus dilaksanakan secara:</p>
+<span class="opsi" onclick="jawab(this,true)">a. Seimbang</span>
+<span class="opsi" onclick="jawab(this,false)">b. Terpisah</span>
+<span class="opsi" onclick="jawab(this,false)">c. Bergantian</span>
+<span class="opsi" onclick="jawab(this,false)">d. Saling meniadakan</span>
+</div>
+
+<!-- SOAL 45 -->
+<div class="soal">
+<p>45. Tujuan otonomi daerah adalah…, kecuali</p>
+<span class="opsi" onclick="jawab(this,false)">a. Meningkatkan pelayanan publik</span>
+<span class="opsi" onclick="jawab(this,false)">b. Pemerataan pembangunan</span>
+<span class="opsi" onclick="jawab(this,false)">c. Menjaga keutuhan NKRI</span>
+<span class="opsi" onclick="jawab(this,true)">d. Mengurangi tanggung jawab pemerintah pusat</span>
+</div>
+
+<!-- SOAL 46 -->
+<div class="soal">
+<p>46. Semboyan negara Indonesia adalah:</p>
+<span class="opsi" onclick="jawab(this,false)">a. Pancasila</span>
+<span class="opsi" onclick="jawab(this,true)">b. Bhinneka Tunggal Ika</span>
+<span class="opsi" onclick="jawab(this,false)">c. Indonesia Maju</span>
+<span class="opsi" onclick="jawab(this,false)">d. Merdeka atau Mati</span>
+</div>
+    
+<!-- SOAL 47 -->
+<div class="soal">
+<p>47. Hak pilih dalam pemilu dimiliki oleh warga negara Indonesia minimal berusia...</p>
+<span class="opsi" onclick="jawab(this,false)">a. 15 tahun</span>
+<span class="opsi" onclick="jawab(this,true)">b. 17 tahun</span>
+<span class="opsi" onclick="jawab(this,false)">c. 18 tahun</span>
+<span class="opsi" onclick="jawab(this,false)">d. 20 tahun</span>
+</div>
+
+<!-- SOAL 48 -->
+<div class="soal">
+<p>48. Yang dimaksud dengan negara hukum adalah negara yang...</p>
+<span class="opsi" onclick="jawab(this,false)">a. Mempunyai kebijakan bebas</span>
+<span class="opsi" onclick="jawab(this,true)">b. Menegakkan hukum sebagai dasar kehidupan</span>
+<span class="opsi" onclick="jawab(this,false)">c. Mengutamakan rakyat di atas hukum</span>
+<span class="opsi" onclick="jawab(this,false)">d. Membatasi HAM</span>
+</div>
+
+<!-- SOAL 49 -->
+<div class="soal">
+<p>49. Dasar hukum tertinggi di Indonesia adalah:</p>
+<span class="opsi" onclick="jawab(this,fal}
 </style>
 </head>
 
