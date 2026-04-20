@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>PPKn 5–14 Interaktif</title>
+
+<style>
+body {
+    font-family: Arial;
+    background: #111;
+    color: white;
+    padding: 20px;
+    
+}
+
+.soal {
+    background: #222;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+}
+
+.opsi {
+    display: block;
+    padding: 6px;
+    margin: 4px 0;
+    background: #333;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.opsi:hover {
+    background: #555;
+}
+
+/* popup */
+#fotoPopup {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.9);
+    top: 0;
+    left: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+#fotoPopup img {
+    width: 250px;
+}
+
+/* jedag */
+@keyframes jedag {
+    0%{transform:scale(1)}
+    50%{transform:scale(1.2)}
+    100%{transform:scale(1)}
+}
+
+.jedag {
+    animation: jedag 0.3s infinite;
+}
+</style>
+</head>
+
+<body>
+
+<h1>🔥 Soal PPKn 5–14 🔥</h1>
+
+<div class="soal">
+<p>5. Pancasila sebagai dasar negara Indonesia terdapat dalam…</p>
+<span class="opsi" onclick="salah()">a. Undang-Undang Dasar 1945</span>
+<span class="opsi" onclick="salah()">b. Proklamasi Kemerdekaan</span>
+<span class="opsi" onclick="benar()">c. Pembukaan UUD 1945</span>
+<span class="opsi" onclick="salah()">d. Teks Sumpah Pemuda</span>
+</div>
+
+<div class="soal">
+<p>6. Siapa yang menjadi presiden ke dua indonesia pada masa orde lama…</p>
+<span class="opsi" onclick="salah()">A. Soekarno</span>
+<span class="opsi" onclick="salah()">B. Mr Assaat</span>
+<span class="opsi" onclick="benar()">C. Syafrudin</span>
+<span class="opsi" onclick="salah()">D. Adam Malik</span>
+</div>
+
+<div class="soal">
+<p>7. Sistem pemerintahan presidensial Indonesia dapat dijelaskan dengan...</p>
+<span class="opsi" onclick="benar()">a. Presiden dipilih oleh rakyat dan bertanggung jawab kepada rakyat</span>
+<span class="opsi" onclick="salah()">b. Presiden dipilih oleh DPR dan bertanggung jawab kepada DPR</span>
+<span class="opsi" onclick="salah()">c. Pemerintah pusat dan daerah memiliki kewenangan yang sama</span>
+<span class="opsi" onclick="salah()">d. Presiden bekerja sama dengan parlemen untuk membuat kebijakan</span>
+</div>
+
+<div class="soal">
+<p>8. Presiden Indonesia yang pertama adalah:</p>
+<span class="opsi" onclick="benar()">a. Soekarno</span>
+<span class="opsi" onclick="salah()">b. Soeharto</span>
+<span class="opsi" onclick="salah()">c. B.J. Habibie</span>
+<span class="opsi" onclick="salah()">d. Joko Widodo</span>
+</div>
+
+<div class="soal">
+<p>9. Pemilihan umum (pemilu) di Indonesia dilaksanakan setiap:</p>
+<span class="opsi" onclick="salah()">a. 3 tahun sekali</span>
+<span class="opsi" onclick="benar()">b. 5 tahun sekali</span>
+<span class="opsi" onclick="salah()">c. 7 tahun sekali</span>
+<span class="opsi" onclick="salah()">d. 10 tahun sekali</span>
+</div>
+
+<div class="soal">
+<p>10. Konsep negara kesatuan yang diterapkan di Indonesia memiliki tujuan untuk...</p>
+<span class="opsi" onclick="salah()">a. Memperbesar daerah-daerah tertentu</span>
+<span class="opsi" onclick="benar()">b. Memperkuat persatuan dan kesatuan bangsa</span>
+<span class="opsi" onclick="salah()">c. Memisahkan kepentingan daerah dan pusat</span>
+<span class="opsi" onclick="salah()">d. Menetapkan daerah otonomi khusus</span>
+</div>
+
+<div class="soal">
+<p>11. Sila pertama Pancasila berbunyi:</p>
+<span class="opsi" onclick="salah()">a. Kemanusiaan yang Adil dan Beradab</span>
+<span class="opsi" onclick="benar()">b. Ketuhanan Yang Maha Esa</span>
+<span class="opsi" onclick="salah()">c. Persatuan Indonesia</span>
+<span class="opsi" onclick="salah()">d. Keadilan Sosial bagi Seluruh Rakyat Indonesia</span>
+</div>
+
+<div class="soal">
+<p>12. Lambang negara Indonesia adalah:</p>
+<span class="opsi" onclick="salah()">a. Harimau</span>
+<span class="opsi" onclick="salah()">b. Burung Garuda</span>
+<span class="opsi" onclick="salah()">c. Elang Jawa</span>
+<span class="opsi" onclick="salah()">d. Komodo</span>
+<span class="opsi" onclick="benar()">e. Garuda Pancasila</span>
+</div>
+
+<div class="soal">
+<p>13. Berapa lama masa jabatan presiden sementara tersebut pada masa orde lama…</p>
+<span class="opsi" onclick="salah()">a. 19 Desember 1948 – 13 Juli 1949</span>
+<span class="opsi" onclick="benar()">b. 27 Desember 1949 – 15 Agustus 1950</span>
+<span class="opsi" onclick="salah()">c. 19 September 1946 – 27 Juli 1947</span>
+<span class="opsi" onclick="salah()">d. 18 September 1949 – 13 Juni 1950</span>
+</div>
+
+<div class="soal">
+<p>14. Wajib belajar di Indonesia diatur dalam UUD 1945 pasal:</p>
+<span class="opsi" onclick="salah()">a. 29</span>
+<span class="opsi" onclick="salah()">b. 31</span>
+<span class="opsi" onclick="benar()">c. 34</span>
+<span class="opsi" onclick="salah()">d. 36</span>
+</div>
+
+<div class="soal">
+<p>15. Pemerintah daerah di Indonesia diberikan kewenangan untuk...</p>
+<span class="opsi" onclick="salah()">a. Membuat kebijakan nasional</span>
+<span class="opsi" onclick="salah()">b. Menentukan kebijakan luar negeri</span>
+<span class="opsi" onclick="benar()">c. Mengelola sumber daya alam setempat</span>
+<span class="opsi" onclick="salah()">d. Membentuk lembaga eksekutif pusat</span>
+</div>
+
+<div class="soal">
+<p>16. Hak asasi manusia yang dijamin dalam UUD 1945 mencakup hak...</p>
+<span class="opsi" onclick="salah()">a. Pendidikan</span>
+<span class="opsi" onclick="salah()">b. Bekerja</span>
+<span class="opsi" onclick="salah()">c. Kebebasan berpendapat</span>
+<span class="opsi" onclick="benar()">d. Semua jawaban benar</span>
+</div>
+
+<div class="soal">
+<p>17. Tugas utama DPR adalah:</p>
+<span class="opsi" onclick="benar()">a. Membuat undang-undang</span>
+<span class="opsi" onclick="salah()">b. Menjalankan pemerintahan</span>
+<span class="opsi" onclick="salah()">c. Mengadili perkara hukum</span>
+<span class="opsi" onclick="salah()">d. Melantik presiden</span>
+</div>
+
+<div class="soal">
+<p>18. Apa kepanjangan dari Supersemar?</p>
+<span class="opsi" onclick="salah()">a. Surat Perintah Lima Maret</span>
+<span class="opsi" onclick="benar()">b. Surat Perintah Sebelas Maret</span>
+<span class="opsi" onclick="salah()">c. Surat Perintah Tujuh Maret</span>
+<span class="opsi" onclick="salah()">d. Surat Perintah Sepuluh Maret</span>
+</div>
+
+<div class="soal">
+<p>19. Badan legislatif Indonesia terdiri dari ...</p>
+<span class="opsi" onclick="benar()">a. MPR, DPR, DPD</span>
+<span class="opsi" onclick="salah()">b. DPR, MK, DPD</span>
+<span class="opsi" onclick="salah()">c. Presiden, DPR, MPR</span>
+<span class="opsi" onclick="salah()">d. MK, MPR, BPK</span>
+</div>
+
+<div class="soal">
+<p>20. Siapa yang menjadi presiden ke tiga pada masa 1949 - 1950…</p>
+<span class="opsi" onclick="salah()">A. Soekarno</span>
+<span class="opsi" onclick="salah()">B. Soeharto</span>
+<span class="opsi" onclick="salah()">C. Syafrudin</span>
+<span class="opsi" onclick="benar()">D. Mr Assaat</span>
+</div>
+
+<div class="soal">
+<p>21. Partisipasi politik yang dapat dilakukan oleh warga negara dalam pemilu adalah...</p>
+<span class="opsi" onclick="salah()">a. Memilih calon yang terbaik</span>
+<span class="opsi" onclick="salah()">b. Menyusun peraturan pemilu</span>
+<span class="opsi" onclick="salah()">c. Mengawasi jalannya pemilu</span>
+<span class="opsi" onclick="benar()">d. Semua jawaban benar</span>
+</div>
+
+<div class="soal">
+<p>22. Lagu kebangsaan Indonesia adalah:</p>
+<span class="opsi" onclick="salah()">a. Halo-Halo Bandung</span>
+<span class="opsi" onclick="salah()">b. Indonesia Jaya</span>
+<span class="opsi" onclick="benar()">c. Indonesia Raya</span>
+<span class="opsi" onclick="salah()">d. Garuda di Dadaku</span>
+</div>
+
+<div class="soal">
+<p>23. Tugas utama Mahkamah Konstitusi adalah:</p>
+<span class="opsi" onclick="salah()">a. Menangani kasus korupsi</span>
+<span class="opsi" onclick="benar()">b. Menjaga konstitusi dan undang-undang</span>
+<span class="opsi" onclick="salah()">c. Mengatur keuangan negara</span>
+<span class="opsi" onclick="salah()">d. Menyusun program pembangunan</span>
+</div>
+
+<div class="soal">
+<p>24. Tujuan gotong royong dalam masyarakat adalah...</p>
+<span class="opsi" onclick="benar()">a. Mempererat hubungan sosial</span>
+<span class="opsi" onclick="salah()">b. Menambah beban orang lain</span>
+<span class="opsi" onclick="salah()">c. Menunjukkan siapa yang paling kuat</span>
+<span class="opsi" onclick="salah()">d. Membuat orang lain bekerja lebih keras</span>
+</div>
+    
+<div class="soal">
+<p>25. Sila kedua Pancasila berbunyi…</p>
+<span class="opsi" onclick="salah()">a. Keadilan sosial bagi seluruh rakyat Indonesia</span>
+<span class="opsi" onclick="salah()">b. Ketuhanan yang Maha Esa</span>
+<span class="opsi" onclick="salah()">c. Persatuan Indonesia</span>
+<span class="opsi" onclick="benar()">d. Kemanusiaan yang adil dan beradab</span>
+</div>
+
+<div class="soal">
+<p>26. Dalam sistem pemerintahan Indonesia, siapa yang memiliki kewenangan untuk mengangkat hakim agung…</p>
+<span class="opsi" onclick="benar()">a. Presiden</span>
+<span class="opsi" onclick="salah()">b. MPR</span>
+<span class="opsi" onclick="salah()">c. DPR</span>
+<span class="opsi" onclick="salah()">d. Mahkamah Agung</span>
+</div>
+
+<div class="soal">
+<p>27. Hak yang dimiliki setiap warga negara disebut:</p>
+<span class="opsi" onclick="salah()">a. Kewajiban</span>
+<span class="opsi" onclick="salah()">b. Tanggung jawab</span>
+<span class="opsi" onclick="benar()">c. Hak asasi manusia</span>
+<span class="opsi" onclick="salah()">d. Peraturan</span>
+</div>
+
+<div class="soal">
+<p>28. Hak untuk hidup, berpendapat, dan mendapatkan pendidikan disebut:</p>
+<span class="opsi" onclick="benar()">a. Hak asasi manusia</span>
+<span class="opsi" onclick="salah()">b. Hak khusus</span>
+<span class="opsi" onclick="salah()">c. Hak warga negara</span>
+<span class="opsi" onclick="salah()">d. Hak istimewa</span>
+</div>
+
+<div class="soal">
+<p>29. Bagaimana cara Indonesia menjaga keberagaman yang ada di masyarakat…</p>
+<span class="opsi" onclick="salah()">a. Dengan mengutamakan satu agama tertentu</span>
+<span class="opsi" onclick="benar()">b. Dengan menghormati perbedaan dan hidup berdampingan secara damai</span>
+<span class="opsi" onclick="salah()">c. Dengan memisahkan budaya dan suku tertentu</span>
+<span class="opsi" onclick="salah()">d. Dengan menegakkan hukum yang tegas</span>
+</div>
+
+<div class="soal">
+<p>30. Apa tujuan utama dari peradilan sosial…</p>
+<span class="opsi" onclick="salah()">a. Mengurangi jumlah kasus kriminal</span>
+<span class="opsi" onclick="benar()">b. Menegakkan hak-hak sosial dan ekonomi warga negara</span>
+<span class="opsi" onclick="salah()">c. Menjaga keamanan negara</span>
+<span class="opsi" onclick="salah()">d. Menyelesaikan masalah politik dalam masyarakat</span>
+</div>
+
+<div class="soal">
+<p>31. Musyawarah merupakan salah satu contoh masyarakat Indonesia untuk mendapatkan…</p>
+<span class="opsi" onclick="salah()">a. Keputusan dibuat berdasarkan suara terbanyak</span>
+<span class="opsi" onclick="salah()">b. Semua pihak sepakat dengan paksaan</span>
+<span class="opsi" onclick="benar()">c. Proses pengambilan keputusan dengan cara diskusi</span>
+<span class="opsi" onclick="salah()">d. Keputusan diambil oleh pemerintah saja</span>
+</div>
+
+<div class="soal">
+<p>32. Salah satu contoh penerapan hak asasi manusia adalah…, kecuali</p>
+<span class="opsi" onclick="salah()">a. Menghormati hak orang lain</span>
+<span class="opsi" onclick="salah()">b. Memperoleh kebebasan berbicara</span>
+<span class="opsi" onclick="salah()">c. Mendapatkan pekerjaan yang layak</span>
+<span class="opsi" onclick="benar()">d. Mendapatkan reward dari hasil pekerjaan</span>
+</div>
+
+<div class="soal">
+<p>33. Tujuan utama Pancasila sebagai dasar negara Indonesia memiliki fungsi untuk…, kecuali</p>
+<span class="opsi" onclick="benar()">a. Mengatur hubungan internasional</span>
+<span class="opsi" onclick="salah()">b. Menyusun sistem hukum</span>
+<span class="opsi" onclick="salah()">c. Menjadi dasar bagi negara Indonesia dalam berorganisasi</span>
+<span class="opsi" onclick="salah()">d. Mewujudkan keadilan sosial bagi seluruh rakyat Indonesia</span>
+</div>
+
+<div class="soal">
+<p>34. Salah satu kewajiban warga negara adalah:</p>
+<span class="opsi" onclick="salah()">a. Menghindari pemilu</span>
+<span class="opsi" onclick="benar()">b. Membayar pajak</span>
+<span class="opsi" onclick="salah()">c. Menolak aturan</span>
+<span class="opsi" onclick="salah()">d. Mengabaikan hukum</span>
+</div>
+    
+<div class="soal">
+<p>35. Negara Indonesia menganut sistem pemerintahan</p>
+<span class="opsi" onclick="salah()">a. Monarki</span>
+<span class="opsi" onclick="benar()">b. Republik</span>
+<span class="opsi" onclick="salah()">c. Kerajaan</span>
+<span class="opsi" onclick="salah()">d. Otoriter</span>
+<span class="opsi" onclick="salah()">e. Presidensial</span>
+</div>
+
+<div class="soal">
+<p>36. Salah satu contoh nilai Bhinneka Tunggal Ika adalah..., kecuali</p>
+<span class="opsi" onclick="salah()">a. Menghormati perbedaan suku, agama, ras, dan budaya</span>
+<span class="opsi" onclick="salah()">b. Menjaga kesatuan dan persatuan bangsa</span>
+<span class="opsi" onclick="salah()">c. Menjaga kebebasan berpendapat</span>
+<span class="opsi" onclick="benar()">d. Membedakan teman di sekolah</span>
+</div>
+
+<div class="soal">
+<p>37. Apakah yang dimaksud dengan demokrasi Pancasila…</p>
+<span class="opsi" onclick="salah()">a. Sistem pemerintahan berdasarkan agama</span>
+<span class="opsi" onclick="benar()">b. Sistem pemerintahan yang berlandaskan pada prinsip musyawarah</span>
+<span class="opsi" onclick="salah()">c. Sistem pemerintahan yang berorientasi pada kapitalisme</span>
+<span class="opsi" onclick="salah()">d. Sistem pemerintahan yang tidak melibatkan rakyat</span>
+</div>
+
+<div class="soal">
+<p>38. Lembaga negara yang berfungsi sebagai pengawas kebijakan pemerintah adalah...</p>
+<span class="opsi" onclick="benar()">a. Dewan Perwakilan Rakyat</span>
+<span class="opsi" onclick="salah()">b. Mahkamah Agung</span>
+<span class="opsi" onclick="salah()">c. Badan Pemeriksa Keuangan</span>
+<span class="opsi" onclick="salah()">d. Dewan Perwakilan Daerah</span>
+</div>
+
+<div class="soal">
+<p>39. Setelah BPUPKI dibubarkan, badan apa yang dibentuk sebagai penggantinya?</p>
+<span class="opsi" onclick="salah()">a. KNIP (Komite Nasional Indonesia Pusat)</span>
+<span class="opsi" onclick="benar()">b. PPKI (Panitia Persiapan Kemerdekaan Indonesia)</span>
+<span class="opsi" onclick="salah()">c. BKR (Badan Keamanan Rakyat)</span>
+<span class="opsi" onclick="salah()">d. TKR (Tentara Keamanan Rakyat)</span>
+</div>
+
+<div class="soal">
+<p>40. Badan yang memiliki kewenangan untuk mengubah Undang-Undang Dasar 1945 adalah...</p>
+<span class="opsi" onclick="salah()">a. Dewan Perwakilan Rakyat</span>
+<span class="opsi" onclick="salah()">b. Presiden</span>
+<span class="opsi" onclick="benar()">c. Majelis Permusyawaratan Rakyat</span>
+<span class="opsi" onclick="salah()">d. Mahkamah Agung</span>
+</div>
+
+<div class="soal">
+<p>41. Warna merah pada bendera Indonesia melambangkan:</p>
+<span class="opsi" onclick="salah()">a. Kesucian</span>
+<span class="opsi" onclick="benar()">b. Keberanian</span>
+<span class="opsi" onclick="salah()">c. Kemerdekaan</span>
+<span class="opsi" onclick="salah()">d. Kesetiaan</span>
+</div>
+
+<div class="soal">
+<p>42. Pasal yang mengatur tentang kebebasan berpendapat adalah…</p>
+<span class="opsi" onclick="salah()">a. Pasal 27</span>
+<span class="opsi" onclick="benar()">b. Pasal 28E</span>
+<span class="opsi" onclick="salah()">c. Pasal 30</span>
+<span class="opsi" onclick="salah()">d. Pasal 31</span>
+</div>
+
+<div class="soal">
+<p>43. Wilayah laut Indonesia disebut sebagai negara:</p>
+<span class="opsi" onclick="salah()">a. Agraris</span>
+<span class="opsi" onclick="benar()">b. Maritim</span>
+<span class="opsi" onclick="salah()">c. Industri</span>
+<span class="opsi" onclick="salah()">d. Gunung</span>
+</div>
+
+<div class="soal">
+<p>44. Hak dan kewajiban warga negara harus dilaksanakan secara:</p>
+<span class="opsi" onclick="benar()">a. Seimbang</span>
+<span class="opsi" onclick="salah()">b. Terpisah</span>
+<span class="opsi" onclick="salah()">c. Bergantian</span>
+<span class="opsi" onclick="salah()">d. Saling meniadakan</span>
+</div>
+    
+<div class="soal">
+<p>45. Tujuan dari otonomi daerah adalah untuk..., kecuali</p>
+<span class="opsi" onclick="salah()">a. Meningkatkan pelayanan publik</span>
+<span class="opsi" onclick="salah()">b. Mewujudkan keadilan dan pemerataan</span>
+<span class="opsi" onclick="salah()">c. Menjaga keutuhan NKRI</span>
+<span class="opsi" onclick="benar()">d. Mengurangi tanggung jawab pemerintah pusat</span>
+</div>
+
+<div class="soal">
+<p>46. Semboyan negara Indonesia adalah:</p>
+<span class="opsi" onclick="salah()">a. Pancasila</span>
+<span class="opsi" onclick="benar()">b. Bhinneka Tunggal Ika</span>
+<span class="opsi" onclick="salah()">c. Indonesia Maju</span>
+<span class="opsi" onclick="salah()">d. Merdeka atau Mati</span>
+</div>
+
+<div class="soal">
+<p>47. Hak pilih dalam pemilu dimiliki oleh warga negara Indonesia minimal yang berusia...</p>
+<span class="opsi" onclick="salah()">a. 15 tahun</span>
+<span class="opsi" onclick="benar()">b. 17 tahun</span>
+<span class="opsi" onclick="salah()">c. 18 tahun</span>
+<span class="opsi" onclick="salah()">d. 20 tahun</span>
+</div>
+
+<div class="soal">
+<p>48. Yang dimaksud dengan negara hukum adalah negara yang...</p>
+<span class="opsi" onclick="salah()">a. Mempunyai kebijakan yang bebas</span>
+<span class="opsi" onclick="benar()">b. Menegakkan hukum sebagai dasar kehidupan bermasyarakat</span>
+<span class="opsi" onclick="salah()">c. Mengutamakan kepentingan rakyat di atas hukum</span>
+<span class="opsi" onclick="salah()">d. Membatasi hak asasi manusia</span>
+</div>
+
+<div class="soal">
+<p>49. Dasar hukum tertinggi di Indonesia adalah:</p>
+<span class="opsi" onclick="salah()">a. Pancasila</span>
+<span class="opsi" onclick="benar()">b. Undang-Undang Dasar 1945</span>
+<span class="opsi" onclick="salah()">c. Peraturan Pemerintah</span>
+<span class="opsi" onclick="salah()">d. Keputusan Presiden</span>
+</div>
+
+<div class="soal">
+<p>50. Tujuan utama dilakukannya pemilihan umum (Pemilu) di Indonesia adalah untuk...</p>
+<span class="opsi" onclick="salah()">a. Memilih kepala desa</span>
+<span class="opsi" onclick="benar()">b. Memilih pemimpin negara dan memilih wakil rakyat</span>
+<span class="opsi" onclick="salah()">c. Menyusun undang-undang baru</span>
+<span class="opsi" onclick="salah()">d. Mengatur kebijakan luar negeri</span>
+</div>
+
+<div class="soal">
+<p>51. Aturan yang mengatur perilaku manusia dalam kehidupan bermasyarakat disebut…</p>
+<span class="opsi" onclick="benar()">a. Norma</span>
+<span class="opsi" onclick="salah()">b. Hukum</span>
+<span class="opsi" onclick="salah()">c. Adat</span>
+<span class="opsi" onclick="salah()">d. Kepercayaan</span>
+</div>
+
+<div class="soal">
+<p>52. Salah satu contoh perilaku menghargai perbedaan adalah:</p>
+<span class="opsi" onclick="benar()">a. Menghormati budaya daerah lain</span>
+<span class="opsi" onclick="salah()">b. Menolak bekerja sama</span>
+<span class="opsi" onclick="salah()">c. Mengejek suku lain</span>
+<span class="opsi" onclick="salah()">d. Mengutamakan sukunya sendiri</span>
+</div>
+
+<div class="soal">
+<p>53. Negara Indonesia merdeka pada tanggal:</p>
+<span class="opsi" onclick="salah()">a. 20 Mei 1908</span>
+<span class="opsi" onclick="salah()">b. 28 Oktober 1928</span>
+<span class="opsi" onclick="benar()">c. 17 Agustus 1945</span>
+<span class="opsi" onclick="salah()">d. 1 Juni 1945</span>
+</div>
+
+<div class="soal">
+<p>54. Dimana ibukota dipindahkan pada masa 1949-1950…</p>
+<span class="opsi" onclick="salah()">A. Bukittinggi</span>
+<span class="opsi" onclick="benar()">B. Yogyakarta</span>
+<span class="opsi" onclick="salah()">C. Bandung</span>
+<span class="opsi" onclick="salah()">D. Batavia</span>
+</div>
+    
+<audio id="bgm" loop>
+    <source src="musik.mp3" type="audio/mpeg">
+</audio>
+<!-- popup -->
+<div id="fotoPopup" onclick="tutu
